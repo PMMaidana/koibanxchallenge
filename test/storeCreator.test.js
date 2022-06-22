@@ -15,9 +15,6 @@ let testStore = {
 	"lastSale": "02-10-2020"
 }
 
-let foo = new StoreCreator(testStore).create();
-console.log(foo)
-
 //
 
 describe('StoreCreator', function() {

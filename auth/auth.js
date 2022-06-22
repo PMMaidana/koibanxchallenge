@@ -8,7 +8,6 @@ let Authenticator = class {
     
     const [ email, password ] = this.decode(requestHeader);
     const user = await User.findOne({ username: email});
-    console.log(user)
     if(!user) { return false; }
     return user.verifyPassword(password);
   }
