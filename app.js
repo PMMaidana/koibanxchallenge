@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const logger = require('./utils/logger');
 mongoose.Promise = Promise;
 
+
 const express = require('express')
 const app = express()
 const dotenv = require('dotenv');
@@ -11,6 +12,7 @@ mongoose.connect('mongodb://' + config.get('mongodb.address') + '/' + config.get
 require('./utils/initializer').init()
 
 app.use('/api', require('./routes/stores'));
+app.use(express.json());
 
 // Start the server
 app.listen(config.get('port'));
